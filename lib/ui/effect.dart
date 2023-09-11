@@ -1,4 +1,4 @@
-import 'package:design_system/style/color.dart';
+import 'package:design_system/style/model/color.dart';
 import 'package:flutter/material.dart';
 
 class FEffect extends StatelessWidget {
