@@ -1,27 +1,23 @@
-
-import 'package:design_system/ui/layout.dart';
+import 'package:design_system/ui/Chart/chart.dart';
+import 'package:design_system/ui/card/card_theme.dart';
+import 'package:design_system/ui/number_picker/number_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
+import 'package:syncfusion_flutter_charts/sparkcharts.dart';
 
 void main() {
-  runApp(const MyApp());
+  return runApp(MyApp());
 }
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
-      debugShowCheckedModeBanner: false,
+    return MaterialApp(
       home: Scaffold(
-        body: Center(
-          // child: Icon_Click('assets/icons/plus.png'),
-        )
+        body: Center(child: Card_Theme()),
       ),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
