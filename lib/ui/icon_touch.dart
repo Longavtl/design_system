@@ -16,10 +16,7 @@ class FTouchArea extends StatelessWidget {
     return SizedBox(
       width: width,
       height: height,
-      child: InkWell(
-        child: Icon(icon, size: 24),
-        onTap: () { onTap!();},
-        ),
+      child: Icon(icon, size: 24, color: Colors.white,),
     );
   }
 
