@@ -68,7 +68,7 @@ class FButton extends StatelessWidget{
           children: [
             leftIcon != null ? Icon(leftIcon, color: (ghost || dash) ? color : textColor) : Container(),
             title != null ? Text(title!, style: TextStyle(
-              color: (ghost || dash) ? color : textColor
+              color: (ghost || dash) ? color : type == 'default' ? Colors.black : textColor
             )) : Container(), 
             rightIcon != null ? Icon(rightIcon, color: (ghost || dash) ? color : textColor) : Container(),
           ],
