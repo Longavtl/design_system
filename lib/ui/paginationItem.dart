@@ -1,5 +1,6 @@
 import 'package:design_system/style/model/color.dart';
 import 'package:flutter/material.dart';
+import 'package:design_system/style/model/enum.dart';
 
 enum Status { fdefault, active, disabled}
 

@@ -2,10 +2,9 @@ import 'package:design_system/style/model/color.dart';
 import 'package:design_system/ui/button.dart';
 import 'package:design_system/ui/contenttext.dart';
 import 'package:flutter/material.dart';
+import 'package:design_system/style/model/enum.dart';
 
-enum Noti {info, success, warning, error}
-enum MediaPosition { none, above }
-enum ActionView { horizontalButton, oneButton }
+
 
 class PopUp extends StatelessWidget {
 

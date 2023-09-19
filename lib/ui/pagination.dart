@@ -104,6 +104,81 @@ class _PaginationState extends State<Pagination> {
         ],
       )
     )
-    : Container();
+    : Container(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            height: 32,
+            child: Center(child: Text('Total ${widget.totalValue} items')),
+          )
+          ,
+          widget.currentValue > 1 ? InkWell(
+            onTap: (){
+              setState(() {
+                widget.currentValue--;
+                if (widget.currentValue<=5 && widget.startValue > 1) {
+                  widget.startValue--;
+                  widget.endValue--;
+                };
+              });
+            },
+            child: Container(
+              width: 32,
+              height: 32,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8.0),
+                color: Colors.white
+              ),
+              child: const Center(
+                child: Icon(Icons.arrow_back_ios_new,
+                color: Colors.black,
+                size: 14)
+              ),
+            ),
+          ) : Container(),
+          for (int i = widget.startValue; i <= widget.endValue; i++)
+            InkWell(
+              onTap: () {
+                setState(() {
+                  widget.currentValue = i;
+                });
+              },
+              child: PaginationItem(
+                status: i == widget.currentValue ? Status.active : Status.fdefault,
+                value: i.toString()
+              ),
+            ),
+            widget.currentValue < widget.totalValue ? InkWell(
+            onTap: (){
+              setState(() {
+                widget.currentValue++;
+                if (widget.currentValue>=4 && widget.endValue < widget.totalValue) {
+                  widget.startValue++;
+                  widget.endValue++;
+                };
+              });
+            },
+            child: Container(
+              margin: EdgeInsets.only(
+                left: 8.0
+              ),
+              width: 32,
+              height: 32,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8.0),
+                color: Colors.white
+              ),
+              child: const Center(
+                child: Icon(Icons.arrow_forward_ios,
+                color: Colors.black,
+                size: 14)
+              ),
+            ),
+          ) : Container(),
+        ],
+      )
+    );
   }
 }

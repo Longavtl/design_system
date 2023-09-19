@@ -1,9 +1,6 @@
+import 'package:design_system/style/model/enum.dart';
 import 'package:design_system/ui/checkbox.dart';
-import 'package:design_system/ui/contenttext.dart';
-import 'package:design_system/ui/divider.dart';
-import 'package:design_system/ui/pagination.dart';
-import 'package:design_system/ui/paginationItem.dart';
-import 'package:design_system/ui/popup.dart';
+import 'package:design_system/ui/snackBar.dart';
 import 'package:flutter/material.dart';
 
 
@@ -29,13 +26,20 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         backgroundColor: Colors.grey,
         body: SafeArea(
-          child: Center(
-            child: Pagination(
-              listChild: Type.basic, 
-              textField: K.no, 
-              withLabel: K.no,
-              totalValue: 7,
-            )
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Center(
+                child: FSnackBar(
+                  device: Device.mobile, 
+                  listChild: SnackBarStyle.white, 
+                  state: SnackBarState.error,
+                  onTap: (){
+                    
+                  }
+                )
+              ),
+            ],
           ),
         )
       ),
