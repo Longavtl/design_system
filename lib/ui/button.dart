@@ -1,6 +1,5 @@
 import 'package:design_system/style/model/color.dart';
 import 'package:flutter/material.dart';
-import 'package:dotted_border/dotted_border.dart';
 
 class FButton extends StatelessWidget{
   FButton({

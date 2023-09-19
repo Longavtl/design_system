@@ -5,24 +5,14 @@ import 'package:flutter/material.dart';
 
 
 void main() {
-  runApp(const MyApp());
+  return runApp(MyApp());
 }
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-
-
-class _MyAppState extends State<MyApp> {
-
-  @override
   Widget build(BuildContext context) {
-
-    return  MaterialApp(
-      debugShowCheckedModeBanner: false,
+    return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.grey,
         body: SafeArea(
@@ -43,6 +33,7 @@ class _MyAppState extends State<MyApp> {
           ),
         )
       ),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
