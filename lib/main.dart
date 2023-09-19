@@ -6,8 +6,6 @@ import 'package:design_system/ui/icons/icons.dart';
 import 'package:design_system/ui/number_picker/number_picker.dart';
 import 'package:design_system/ui/radio/radio_custom.dart';
 import 'package:flutter/material.dart';
-import 'package:syncfusion_flutter_charts/charts.dart';
-import 'package:syncfusion_flutter_charts/sparkcharts.dart';
 
 
 void main() {
