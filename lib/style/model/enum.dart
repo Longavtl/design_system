@@ -7,3 +7,4 @@ enum MediaPosition { none, above }
 enum ActionView { horizontalButton, oneButton }
 enum SnackBarStyle { color, white }
 enum SnackBarState { info, success, warning, error, fdefault}
+enum Direction { horizontal, vertical }
