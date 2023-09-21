@@ -72,7 +72,7 @@ class PopUp extends StatelessWidget {
             ),
           )
           : Container(),
-          ContentText(
+          FContentText(
             device: device, 
             contentAlign: ContentAlign.center, 
             subTitle: subTitle, 

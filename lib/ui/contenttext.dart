@@ -4,7 +4,7 @@ import 'package:design_system/style/model/style.dart';
 import 'package:design_system/style/model/text_style.dart';
 import 'package:flutter/material.dart';
 
-class ContentText extends StatelessWidget {
+class FContentText extends StatelessWidget {
 
   final Device device;
   final ContentAlign contentAlign;
@@ -14,7 +14,7 @@ class ContentText extends StatelessWidget {
   final String subTitleText;
   final String bodyText;
 
-  ContentText({
+  FContentText({
     required this.device,
     required this.contentAlign,
     required this.subTitle,

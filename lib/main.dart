@@ -1,6 +1,4 @@
-import 'package:design_system/style/model/enum.dart';
-import 'package:design_system/ui/checkbox.dart';
-import 'package:design_system/ui/snackBar.dart';
+import 'package:design_system/ui/toolbar.dart';
 import 'package:flutter/material.dart';
 
 
@@ -16,21 +14,9 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.grey,
         body: SafeArea(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Center(
-                child: FSnackBar(
-                  device: Device.mobile, 
-                  listChild: SnackBarStyle.white, 
-                  state: SnackBarState.error,
-                  onTap: (){
-                    
-                  }
-                )
-              ),
-            ],
-          ),
+          child: Center(
+            child: FToolbar(listChild: 1)
+          )
         )
       ),
       debugShowCheckedModeBanner: false,
