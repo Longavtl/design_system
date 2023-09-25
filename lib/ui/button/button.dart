@@ -96,7 +96,7 @@ class Button_CusTom extends StatelessWidget {
       case 'Text action':
         return Text_action(Position,Content);
       default:
-        return Container(); // Xử lý trường hợp khác nếu cần
+        return Container();
     }
   }
 
@@ -117,11 +117,12 @@ class Button_CusTom extends StatelessWidget {
         );
       case 'Icon left':
         return Container(
-          width: 62,
+          width: 70,
           height: 22,
           child: Row(
             children: [
               Icons != null ? Icons! : Icon_Custom(),
+              SizedBox(width: 5,),
               Text(Content,
                 style: TextStyle(
                     color: Colors.blue,
@@ -133,7 +134,7 @@ class Button_CusTom extends StatelessWidget {
         );
       case 'Icon right':
         return Container(
-            width: 62,
+            width: 70,
             height: 22,
             child: Row(
               children: [
@@ -143,6 +144,7 @@ class Button_CusTom extends StatelessWidget {
                       fontSize: 14
                   ),
                 ),
+                SizedBox(width: 5,),
                 Icons != null ? Icons! : Icon_Custom(),
               ],
             )

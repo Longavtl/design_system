@@ -15,71 +15,178 @@ class Radio_Custom extends StatefulWidget {
   @override
   State<Radio_Custom> createState() => _Radio_CustomState();
 }
-enum SingingCharacter { lafayette, jefferson }
+enum Value_radio { yes, no }
 class _Radio_CustomState extends State<Radio_Custom> {
-  SingingCharacter? _character = SingingCharacter.lafayette;
+  Value_radio? _character = Value_radio.yes;
   @override
   Widget build(BuildContext context) {
     switch(widget.Position){
       case 'No label':
-        return Container(
-          height: 200,
-          child: Row(
-            children: [
-              Radio(
-                  value: SingingCharacter.jefferson,
+        switch(widget.State_Radio) {
+          case 'Active':
+            switch(widget.Check){
+              case false :
+                return Radio(
+                  value: Value_radio.no,
                   groupValue: _character,
-                  onChanged: (SingingCharacter? value) {
-                    setState(() {
-                      _character = value;
-                    });
+                  onChanged: ( value) {
                   },
-              ),
-              Radio(
-                activeColor: FColor.greyList[5].value,
-                  value: SingingCharacter.lafayette,
+                );
+              case true:
+                return Radio(
+                  value: Value_radio.yes,
                   groupValue: _character,
-                  onChanged: (SingingCharacter? value) {
-                    setState(() {
-                      _character = value;
-                    });
+                  onChanged: ( value) {
                   },
-                ),
-            ],
-          ),
-        );
+                );
+            }
+          case 'Disabled':
+            switch(widget.Check){
+              case false :
+                return Radio(
+                  value: Value_radio.no,
+                  groupValue: _character,
+                  onChanged: ( value) {
+                  },
+                );
+              case true:
+                return Radio(
+                  activeColor: FColor.greyList[5].value,
+                  value: Value_radio.yes,
+                  groupValue: _character,
+                  onChanged: (value) {
+                  },
+                );
+            }
+        }
       case 'Right label':
-        return Container(
-          height: 200,
-          child: Column(
-            children: <Widget>[
-              ListTile(
-                title: const Text('Lafayette'),
-                leading: Radio<SingingCharacter>(
-                  value: SingingCharacter.lafayette,
-                  groupValue: _character,
-                  onChanged: (SingingCharacter? value) {
-                    setState(() {
-                      _character = value;
-                    });
-                  },
-                ),
-              ),
-              ListTile(
-                title: const Text('Thomas Jefferson'),
-                leading: Radio<SingingCharacter>(
-                  value: SingingCharacter.jefferson,
-                  groupValue: _character,
-                  onChanged: (SingingCharacter? value) {
-                    setState(() {
-                      _character = value;
-                    });
-                  },
-                ),
-              ),
-            ],
-          ),
-        );
+        switch(widget.State_Radio) {
+          case 'Active':
+            switch(widget.Check){
+              case false :
+                return Row(
+                  children: [
+                    Radio(
+                      value: Value_radio.no,
+                      groupValue: _character,
+                      onChanged: ( value) {
+                      },
+                    ),
+                    SizedBox(width: 5,),
+                    Text('Checked'
+                    )
+                  ],
+                );
+              case true:
+                return Row(
+                  children: [
+                    Radio(
+                      value: Value_radio.yes,
+                      groupValue: _character,
+                      onChanged: ( value) {
+                      },
+                    ),
+                    SizedBox(width: 5,),
+                    Text('Un checked'
+                    )
+                  ],
+                );
+            }
+          case 'Disabled':
+            switch(widget.Check){
+              case false :
+                return Row(
+                  children: [
+                    Radio(
+                      value: Value_radio.no,
+                      groupValue: _character,
+                      onChanged: ( value) {
+                      },
+                    ),
+                    SizedBox(width: 5,),
+                    Text('Checked'
+                    )
+                  ],
+                );
+              case true:
+                return Row(
+                  children: [
+                    Radio(
+                      activeColor: FColor.greyList[5].value,
+                      value: Value_radio.yes,
+                      groupValue: _character,
+                      onChanged: ( value) {
+                      },
+                    ),
+                    SizedBox(width: 5,),
+                    Text('Un checked'
+                    )
+                  ],
+                );
+            }
+        }
+      case 'Left label':
+        switch(widget.State_Radio) {
+          case 'Active':
+            switch(widget.Check){
+              case false :
+                return Row(
+                  children: [
+                    Text('Checked'),
+                    SizedBox(width: 5,),
+                    Radio(
+                      value: Value_radio.no,
+                      groupValue: _character,
+                      onChanged: ( value) {
+                      },
+                    ),
+                  ],
+                );
+              case true:
+                return Row(
+                  children: [
+                    Text('Un checked'),
+                    SizedBox(width: 5,),
+                    Radio(
+                      value: Value_radio.yes,
+                      groupValue: _character,
+                      onChanged: ( value) {
+                      },
+                    ),
+                  ],
+                );
+            }
+          case 'Disabled':
+            switch(widget.Check){
+              case false :
+                return Row(
+                  children: [
+                    Text('Checked'),
+                    SizedBox(width: 5,),
+                    Radio(
+                      value: Value_radio.no,
+                      groupValue: _character,
+                      onChanged: ( value) {
+                      },
+                    ),
+                  ],
+                );
+              case true:
+                return Row(
+                  children: [
+                    Text('Un checked'),
+                    SizedBox(width: 5,),
+                    Radio(
+                      activeColor: FColor.greyList[5].value,
+                      value: Value_radio.yes,
+                      groupValue: _character,
+                      onChanged: ( value) {
+                      },
+                    ),
+                  ],
+                );
+            }
+        }
     }
     return Container();
   }
