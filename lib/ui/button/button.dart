@@ -117,9 +117,9 @@ class Button_CusTom extends StatelessWidget {
         );
       case 'Icon left':
         return Container(
-          width: 70,
           height: 22,
           child: Row(
+            mainAxisSize: MainAxisSize.min,
             children: [
               Icons != null ? Icons! : Icon_Custom(),
               SizedBox(width: 5,),
@@ -134,9 +134,9 @@ class Button_CusTom extends StatelessWidget {
         );
       case 'Icon right':
         return Container(
-            width: 70,
             height: 22,
             child: Row(
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Text(Content,
                   style: TextStyle(
