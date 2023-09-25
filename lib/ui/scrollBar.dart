@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 
 class FScrollBar extends StatefulWidget {
 
-  Widget child;
+  List<Widget> children;
   Direction direction;
   double radius;
   double thickness;
 
   FScrollBar({
-    required this.child,
+    required this.children,
     this.direction = Direction.vertical,
     this.radius = 8,
     this.thickness = 6
@@ -22,19 +22,16 @@ class FScrollBar extends StatefulWidget {
 class _FScrollBarState extends State<FScrollBar> {
   @override
   Widget build(BuildContext context) {
-    return Scrollbar(
-              thickness: widget.thickness,
-              radius: Radius.circular(widget.radius),
-              child: ListView.builder(
-                scrollDirection: widget.direction == Direction.horizontal ? Axis.horizontal : Axis.vertical,
-                itemCount: 100,
-                itemBuilder: (BuildContext context, int index) {
-                          return SizedBox(
-                            height: 20,
-                            child: widget.child
-                          );
-                        }
+    return Container(
+      height: 200,
+      child: Scrollbar(
+                thickness: widget.thickness,
+                radius: Radius.circular(widget.radius),
+                child: ListView(
+                  scrollDirection: widget.direction == Direction.vertical ? Axis.vertical : Axis.horizontal,
+                  children: widget.children
                 )
-              );
+                ),
+    );
   }
 }
