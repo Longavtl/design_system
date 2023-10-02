@@ -9,3 +9,11 @@ enum Full_Layout_TabBar {
   yes,
   no
 }
+enum With_Action {
+  Yes,
+  No
+}
+enum With_Filter {
+  Yes,
+  No
+}

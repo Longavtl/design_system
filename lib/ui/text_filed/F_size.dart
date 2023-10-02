@@ -8,9 +8,7 @@ enum Status_TextFeild{
   Active,
   Disable,
   Typing,
-  Error,
-  Success,
-  Focus
+  Error_Success_Focus
 }
 enum Input_AlignTextFeild{
   Left,
